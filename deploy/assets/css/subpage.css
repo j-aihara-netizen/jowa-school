@@ -6,12 +6,31 @@
 .pg-hero {
   padding: calc(52px + 56px) 48px 60px;
   position: relative; overflow: hidden;
+  background-color: var(--teal-dark);
+  background-size: cover;
+  background-position: center 40%;
 }
 .pg-hero::before {
   content: '';
   position: absolute; inset: 0;
   background-image: radial-gradient(circle, rgba(255,255,255,.06) 1px, transparent 1px);
   background-size: 28px 28px;
+}
+/* プログラム別ヒーロー：グラデーション＋写真の多重レイヤー */
+.pg-hero-7habits {
+  background-image:
+    linear-gradient(135deg, rgba(10,68,90,.82) 0%, rgba(14,116,144,.65) 100%),
+    url('../images/prog-7habits.jpg');
+}
+.pg-hero-team {
+  background-image:
+    linear-gradient(135deg, rgba(6,70,80,.82) 0%, rgba(14,155,173,.65) 100%),
+    url('../images/prog-team.jpg');
+}
+.pg-hero-treasure {
+  background-image:
+    linear-gradient(135deg, rgba(10,55,75,.82) 0%, rgba(8,145,178,.65) 100%),
+    url('../images/prog-treasure.jpg');
 }
 .pg-hero-inner {
   max-width: 1120px; margin: 0 auto;

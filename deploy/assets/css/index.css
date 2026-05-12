@@ -4,7 +4,10 @@
 
 /* ── HERO ── */
 .hero {
-  background: var(--teal-dark);
+  background-color: var(--teal-dark);
+  background-image: url('../images/hero.jpg');
+  background-size: cover;
+  background-position: center 30%;
   padding: calc(52px + 72px) 48px 80px;
   position: relative; overflow: hidden;
 }
@@ -12,8 +15,8 @@
   content: '';
   position: absolute; inset: 0;
   background:
-    radial-gradient(ellipse 60% 80% at 90% 50%, rgba(6,182,212,.18) 0%, transparent 70%),
-    radial-gradient(ellipse 40% 60% at 10% 80%, rgba(6,182,212,.1) 0%, transparent 60%);
+    linear-gradient(to right, rgba(6,45,60,.90) 0%, rgba(6,45,60,.72) 55%, rgba(6,45,60,.45) 100%),
+    radial-gradient(ellipse 60% 80% at 90% 50%, rgba(6,182,212,.14) 0%, transparent 70%);
 }
 /* 背景ドット装飾 */
 .hero::after {
@@ -128,13 +131,19 @@
   display: flex; align-items: center; justify-content: center;
 }
 .prog-card-visual-7habits {
-  background: linear-gradient(135deg, var(--teal-dark) 0%, var(--teal) 100%);
+  background:
+    linear-gradient(160deg, rgba(10,68,90,.75) 0%, rgba(14,116,144,.55) 100%),
+    url('../images/prog-7habits.jpg') center/cover no-repeat;
 }
 .prog-card-visual-team {
-  background: linear-gradient(135deg, #065A60 0%, #0E9BAD 100%);
+  background:
+    linear-gradient(160deg, rgba(6,70,80,.75) 0%, rgba(14,155,173,.55) 100%),
+    url('../images/prog-team.jpg') center/cover no-repeat;
 }
 .prog-card-visual-treasure {
-  background: linear-gradient(135deg, #0A4D5C 0%, #0891B2 100%);
+  background:
+    linear-gradient(160deg, rgba(10,55,75,.75) 0%, rgba(8,145,178,.55) 100%),
+    url('../images/prog-treasure.jpg') center/cover no-repeat;
 }
 .prog-card-visual-label {
   font-family: var(--font-disp);
