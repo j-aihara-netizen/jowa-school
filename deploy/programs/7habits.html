@@ -10,11 +10,197 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/common.css">
   <link rel="stylesheet" href="../assets/css/subpage.css">
+  <style>
+    /* ── このページ専用スタイル ── */
+
+    /* 実績数値バー */
+    .pg-stats {
+      display: flex; gap: 0; flex-wrap: wrap;
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: var(--radius-md);
+      overflow: hidden; max-width: 760px;
+      margin-top: 32px;
+    }
+    .pg-stat {
+      flex: 1; min-width: 140px;
+      padding: 18px 24px;
+      border-right: 1px solid rgba(255,255,255,.1);
+    }
+    .pg-stat:last-child { border-right: none; }
+    .pg-stat-num {
+      font-family: var(--font-disp);
+      font-size: clamp(22px,2.8vw,32px);
+      font-weight: 800; color: var(--white);
+      line-height: 1; letter-spacing: -.03em;
+    }
+    .pg-stat-num span { font-size: .6em; font-weight: 700; opacity: .7; }
+    .pg-stat-label {
+      font-size: 11px; color: rgba(255,255,255,.5);
+      margin-top: 5px; letter-spacing: .04em;
+    }
+
+    /* 課題訴求 */
+    .pain-section {
+      background: var(--ice);
+      padding: 72px 48px;
+    }
+    .pain-inner { max-width: 1120px; margin: 0 auto; }
+    .section-eyebrow {
+      font-size: 11px; font-weight: 700; letter-spacing: .15em;
+      color: var(--teal); text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .section-heading {
+      font-family: var(--font-disp);
+      font-size: clamp(22px, 2.5vw, 32px);
+      font-weight: 800; color: var(--ink);
+      letter-spacing: -.02em; margin-bottom: 40px;
+      line-height: 1.3;
+    }
+    .pain-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+    .pain-card {
+      background: var(--white);
+      border: 1px solid var(--rule);
+      border-radius: var(--radius-md);
+      padding: 20px 22px;
+      display: flex; gap: 14px; align-items: flex-start;
+    }
+    .pain-icon {
+      font-size: 24px; flex-shrink: 0; margin-top: 1px;
+      line-height: 1;
+    }
+    .pain-text {
+      font-size: 14px; color: var(--ink);
+      font-weight: 600; line-height: 1.55;
+    }
+    .pain-sub {
+      font-size: 12px; color: var(--sub);
+      font-weight: 400; margin-top: 3px; line-height: 1.5;
+    }
+
+    /* 学習サイクル */
+    .cycle-section {
+      background: var(--white);
+      padding: 80px 48px;
+      border-top: 1px solid var(--rule);
+    }
+    .cycle-inner { max-width: 1120px; margin: 0 auto; }
+    .cycle-layout {
+      display: grid;
+      grid-template-columns: 1fr 480px;
+      gap: 64px; align-items: center;
+      margin-top: 40px;
+    }
+    .cycle-img {
+      width: 100%; height: auto;
+      border-radius: var(--radius-lg);
+      box-shadow: 0 4px 24px rgba(0,0,0,.1);
+    }
+    .cycle-points { display: flex; flex-direction: column; gap: 24px; }
+    .cycle-point {
+      display: flex; gap: 16px; align-items: flex-start;
+    }
+    .cycle-num {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: var(--teal); color: var(--white);
+      font-family: var(--font-disp); font-size: 14px; font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .cycle-body {}
+    .cycle-title {
+      font-family: var(--font-disp);
+      font-size: 15px; font-weight: 800; color: var(--ink);
+      margin-bottom: 5px;
+    }
+    .cycle-desc { font-size: 13px; color: var(--sub); line-height: 1.7; }
+    .cycle-quote {
+      margin-top: 32px;
+      background: rgba(14,116,144,.06);
+      border-left: 4px solid var(--teal);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 16px 20px;
+      font-size: 13px; color: var(--teal-dark);
+      line-height: 1.8; font-weight: 600;
+    }
+
+    /* プログラム詳細（本体セクション） */
+    .detail-section {
+      padding: 80px 48px;
+      background: var(--white);
+    }
+    .detail-inner {
+      max-width: 1120px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 300px;
+      gap: 56px; align-items: start;
+    }
+
+    /* FAQ */
+    .faq-section {
+      background: var(--ice);
+      padding: 72px 48px;
+    }
+    .faq-inner { max-width: 800px; margin: 0 auto; }
+    .faq-list { margin-top: 36px; display: flex; flex-direction: column; gap: 12px; }
+    .faq-item {
+      background: var(--white);
+      border: 1px solid var(--rule);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+    .faq-q {
+      width: 100%; text-align: left;
+      padding: 18px 20px;
+      display: flex; gap: 14px; align-items: center;
+      font-family: var(--font-disp);
+      font-size: 14px; font-weight: 700; color: var(--ink);
+      background: none; border: none; cursor: pointer;
+      line-height: 1.5;
+    }
+    .faq-q-mark {
+      width: 24px; height: 24px; border-radius: 50%;
+      background: var(--teal); color: var(--white);
+      font-size: 12px; font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .faq-q-text { flex: 1; text-align: left; }
+    .faq-arrow {
+      font-size: 12px; color: var(--sub);
+      transition: transform .2s;
+      flex-shrink: 0;
+    }
+    .faq-item.open .faq-arrow { transform: rotate(180deg); }
+    .faq-a {
+      display: none;
+      padding: 0 20px 18px 58px;
+      font-size: 13px; color: var(--sub); line-height: 1.8;
+    }
+    .faq-item.open .faq-a { display: block; }
+
+    @media (max-width: 1024px) {
+      .cycle-layout { grid-template-columns: 1fr; }
+      .cycle-img { max-width: 560px; margin: 0 auto; display: block; }
+      .detail-inner { grid-template-columns: 1fr; gap: 40px; }
+      .pg-sidebar { order: -1; }
+      .pg-features { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .pain-section, .cycle-section, .detail-section, .faq-section { padding: 48px 24px; }
+      .pg-stat { min-width: 110px; padding: 14px 16px; }
+      .faq-a { padding-left: 20px; }
+    }
+  </style>
 </head>
 <body>
 
 <header class="hd">
-  <a href="/" class="hd-logo">J<b>O</b>WA <span>SCHOOL</span></a>
+  <a href="/" class="hd-logo"><img src="/assets/images/jowa-logo.png" alt="JOWA"><span>SCHOOL</span></a>
   <nav class="hd-nav">
     <a href="/#programs" class="active">プログラム</a>
     <a href="/#features">特徴</a>
@@ -24,7 +210,7 @@
   </nav>
 </header>
 
-<!-- ── HERO ── -->
+<!-- ══ HERO ════════════════════════════════════════ -->
 <div class="pg-hero pg-hero-7habits">
   <div class="pg-hero-inner">
     <nav class="pg-breadcrumb">
@@ -39,34 +225,132 @@
     </div>
     <h1>7つの習慣®体験型<br>コミュニケーションワークショップ</h1>
     <p class="pg-hero-lead">世界5,000万部・国内270万部のベストセラー『7つの習慣』をもとに、チーム協力型のアクティビティを通して生徒の「主体性」「自己理解」「他者理解」「協調性」を楽しく育む学習プログラムです。</p>
-    <div class="pg-hero-specs">
-      <div class="pg-hero-spec">
-        <div class="pg-hero-spec-label">所要時間</div>
-        <div class="pg-hero-spec-value">120〜180分</div>
+
+    <div class="pg-stats">
+      <div class="pg-stat">
+        <div class="pg-stat-num">3,000<span>名以上</span></div>
+        <div class="pg-stat-label">延べ参加生徒数</div>
       </div>
-      <div class="pg-hero-spec">
-        <div class="pg-hero-spec-label">対応人数</div>
-        <div class="pg-hero-spec-value">10〜400名</div>
+      <div class="pg-stat">
+        <div class="pg-stat-num">92<span>%</span></div>
+        <div class="pg-stat-label">「また参加したい」回答率</div>
       </div>
-      <div class="pg-hero-spec">
-        <div class="pg-hero-spec-label">対象</div>
-        <div class="pg-hero-spec-value">小学生〜大学生</div>
+      <div class="pg-stat">
+        <div class="pg-stat-num">47<span>都道府県</span></div>
+        <div class="pg-stat-label">実施対応エリア</div>
       </div>
-      <div class="pg-hero-spec">
-        <div class="pg-hero-spec-label">開催場所</div>
-        <div class="pg-hero-spec-value">全国対応</div>
+      <div class="pg-stat">
+        <div class="pg-stat-num">10〜<span>400名</span></div>
+        <div class="pg-stat-label">対応人数</div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ── BODY ── -->
-<div style="background: var(--white);">
-  <div class="pg-body">
+<!-- ══ PAIN POINTS ══════════════════════════════════ -->
+<section class="pain-section">
+  <div class="pain-inner">
+    <p class="section-eyebrow">PROBLEM</p>
+    <h2 class="section-heading">こんなお悩みはありませんか？</h2>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="pain-icon">😔</div>
+        <div>
+          <div class="pain-text">生徒が受け身で、自分から動こうとしない</div>
+          <div class="pain-sub">主体性が育ちにくく、指示待ちになってしまう</div>
+        </div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">💬</div>
+        <div>
+          <div class="pain-text">クラスや学年のまとまりが弱い</div>
+          <div class="pain-sub">人間関係が固まりすぎて、新しい関係を築けていない</div>
+        </div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">📚</div>
+        <div>
+          <div class="pain-text">修学旅行に「学び」の要素を組み込みたい</div>
+          <div class="pain-sub">思い出だけでなく、教育的な価値も残したい</div>
+        </div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">🤝</div>
+        <div>
+          <div class="pain-text">協力することの大切さを体で感じてほしい</div>
+          <div class="pain-sub">知識としてではなく、体験から自然と身につけてほしい</div>
+        </div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">🌱</div>
+        <div>
+          <div class="pain-text">キャリア教育・自己理解の機会を作りたい</div>
+          <div class="pain-sub">自分を知り、他者を知ることで進路や将来を考えるきっかけに</div>
+        </div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">⏱️</div>
+        <div>
+          <div class="pain-text">短時間でインパクトのあるプログラムを探している</div>
+          <div class="pain-sub">スケジュールに組み込みやすい120〜180分で完結</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- MAIN -->
+<!-- ══ LEARNING CYCLE ═══════════════════════════════ -->
+<section class="cycle-section">
+  <div class="cycle-inner">
+    <p class="section-eyebrow">LEARNING METHOD</p>
+    <h2 class="section-heading">3つのサイクルで、学びを「行動」に変える</h2>
+    <div class="cycle-layout">
+      <div>
+        <div class="cycle-points">
+          <div class="cycle-point">
+            <div class="cycle-num">1</div>
+            <div class="cycle-body">
+              <div class="cycle-title">インプット（座学）</div>
+              <div class="cycle-desc">ファシリテーターのガイドのもと、『7つの習慣』の思考フレームを学びます。知識として「頭に入れる」ことで、次のアクティビティで気づきが深まります。</div>
+            </div>
+          </div>
+          <div class="cycle-point">
+            <div class="cycle-num">2</div>
+            <div class="cycle-body">
+              <div class="cycle-title">アウトドア実践（体験アクティビティ）</div>
+              <div class="cycle-desc">チーム協力型のアクティビティを通じて、主体性・協調性・相互理解を体で体験します。座学の知識がリアルな行動として現れ、パラダイムシフトが起こります。</div>
+            </div>
+          </div>
+          <div class="cycle-point">
+            <div class="cycle-num">3</div>
+            <div class="cycle-body">
+              <div class="cycle-title">アウトプット（振り返り）</div>
+              <div class="cycle-desc">体験から得た気づきをことばにして共有します。言語化することで定着度が高まり、研修後の日常生活・学校生活にも活きる変化を生みます。</div>
+            </div>
+          </div>
+        </div>
+        <div class="cycle-quote">
+          繰り返される「インプット→体験→アウトプット」によって、『7つの習慣』のエッセンスが頭と身体に刷り込まれ、研修後も行動が変わり続けます。
+        </div>
+      </div>
+      <div>
+        <img
+          src="../assets/images/7habits-typographic.png"
+          alt="7つの習慣 Outdoor 学習サイクル図"
+          class="cycle-img"
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ DETAIL（本文 + サイドバー）══════════════════ -->
+<div class="detail-section">
+  <div class="detail-inner">
+
     <main class="pg-main">
 
+      <!-- プログラムについて -->
       <div class="pg-section">
         <h2 class="pg-section-title">プログラムについて</h2>
         <p>「7つの習慣®体験型コミュニケーションワークショップ」は、世界的ベストセラーを土台に3社が共同開発した、修学旅行・林間学校向けの体験型学習プログラムです。</p>
@@ -106,9 +390,17 @@
         </div>
       </div>
 
+      <!-- 活用シーン -->
       <div class="pg-section">
         <h2 class="pg-section-title">こんなシーンで活用できます</h2>
         <div class="pg-scenes">
+          <div class="pg-scene">
+            <div class="pg-scene-dot"></div>
+            <div class="pg-scene-text">
+              <strong>修学旅行・林間学校・宿泊研修</strong>
+              旅行スケジュールに組み込むことで、思い出になるだけでなくクラスの絆が深まります。
+            </div>
+          </div>
           <div class="pg-scene">
             <div class="pg-scene-dot"></div>
             <div class="pg-scene-text">
@@ -133,13 +425,6 @@
           <div class="pg-scene">
             <div class="pg-scene-dot"></div>
             <div class="pg-scene-text">
-              <strong>修学旅行・林間学校・宿泊研修</strong>
-              旅行スケジュールに組み込むことで、思い出になるだけでなくクラスの絆が深まります。
-            </div>
-          </div>
-          <div class="pg-scene">
-            <div class="pg-scene-dot"></div>
-            <div class="pg-scene-text">
               <strong>クラス・学年の関係再構築</strong>
               アクティビティと振り返りを通じて、互いを理解・認め合い向き合える空気をつくる機会になります。
             </div>
@@ -147,6 +432,7 @@
         </div>
       </div>
 
+      <!-- タイムライン -->
       <div class="pg-section">
         <h2 class="pg-section-title">当日のスケジュール（例）</h2>
         <div class="pg-schedule">
@@ -164,11 +450,15 @@
           </div>
           <div class="pg-schedule-row">
             <div class="pg-schedule-time">0:15</div>
+            <div class="pg-schedule-content">インプット（座学）：7つの習慣®の思考フレームを学ぶ</div>
+          </div>
+          <div class="pg-schedule-row">
+            <div class="pg-schedule-time">0:40</div>
             <div class="pg-schedule-content">アクティビティ開始（チーム協力型ワーク）</div>
           </div>
           <div class="pg-schedule-row">
             <div class="pg-schedule-time">1:30</div>
-            <div class="pg-schedule-content">振り返り・気づきの共有</div>
+            <div class="pg-schedule-content">振り返り・気づきの共有（アウトプット）</div>
           </div>
           <div class="pg-schedule-row">
             <div class="pg-schedule-time">1:50</div>
@@ -181,6 +471,7 @@
         </div>
       </div>
 
+      <!-- 実施条件 -->
       <div class="pg-section">
         <h2 class="pg-section-title">実施条件</h2>
         <p>以下4つの条件をすべて満たせば、全国どこでも開催できます。</p>
@@ -228,8 +519,8 @@
             <span class="pg-sidebar-value">全国どこでも対応</span>
           </div>
           <div class="pg-sidebar-row">
-            <span class="pg-sidebar-label">販売窓口</span>
-            <span class="pg-sidebar-value">お問い合わせください</span>
+            <span class="pg-sidebar-label">開発</span>
+            <span class="pg-sidebar-value">3社共同開発<br><small style="font-weight:500;color:var(--sub);">フランクリン・コヴィー・ジャパン含む</small></span>
           </div>
         </div>
       </div>
@@ -243,7 +534,57 @@
   </div>
 </div>
 
-<!-- ── CTA ── -->
+<!-- ══ FAQ ═══════════════════════════════════════════ -->
+<section class="faq-section">
+  <div class="faq-inner">
+    <p class="section-eyebrow">FAQ</p>
+    <h2 class="section-heading">よくあるご質問</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-mark">Q</span>
+          <span class="faq-q-text">『7つの習慣』を生徒が知らなくても参加できますか？</span>
+          <span class="faq-arrow">▼</span>
+        </button>
+        <div class="faq-a">事前知識は不要です。プログラムの中でファシリテーターが丁寧に説明しますので、初めて聞く生徒でも自然に内容が理解できる設計になっています。</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-mark">Q</span>
+          <span class="faq-q-text">小学生でも参加できますか？</span>
+          <span class="faq-arrow">▼</span>
+        </button>
+        <div class="faq-a">小学5年生から対応可能です。学年や対象に合わせてプログラムの言語・難易度を調整してご提供しますので、まずはご相談ください。</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-mark">Q</span>
+          <span class="faq-q-text">屋外での実施は必須ですか？</span>
+          <span class="faq-arrow">▼</span>
+        </button>
+        <div class="faq-a">屋外・屋内どちらにも対応しています。雨天時でも実施できるよう、室内版プログラムもご用意しています。スペースの広さ（1人3.5㎡以上）が確保できれば体育館・ホール等でも開催可能です。</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-mark">Q</span>
+          <span class="faq-q-text">修学旅行のスケジュールに組み込めますか？</span>
+          <span class="faq-arrow">▼</span>
+        </button>
+        <div class="faq-a">はい、120〜180分のプログラムですので、修学旅行・林間学校の1コマとして組み込みやすい設計です。旅程に合わせて時間や内容の調整も可能ですので、お気軽にご相談ください。</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-mark">Q</span>
+          <span class="faq-q-text">費用はどれくらいかかりますか？</span>
+          <span class="faq-arrow">▼</span>
+        </button>
+        <div class="faq-a">人数・会場・実施内容により異なります。まずはお問い合わせください。見積もり・相談は無料です。2営業日以内に担当者よりご連絡いたします。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA ════════════════════════════════════════════ -->
 <section class="pg-cta-section">
   <div class="pg-cta-inner">
     <h2 class="pg-cta-title">このプログラムについて相談する</h2>
@@ -255,7 +596,7 @@
   </div>
 </section>
 
-<!-- ── FOOTER ── -->
+<!-- ══ FOOTER ══════════════════════════════════════════ -->
 <footer class="ft">
   <div class="ft-cta">
     <div class="ft-cta-inner">
@@ -310,6 +651,13 @@
     </div>
   </div>
 </footer>
+
+<script>
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    item.classList.toggle('open');
+  }
+</script>
 
 </body>
 </html>
