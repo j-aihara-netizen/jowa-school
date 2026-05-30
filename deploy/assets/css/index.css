@@ -5,7 +5,7 @@
 /* ── HERO ── */
 .hero {
   background-color: var(--teal-dark);
-  background-image: url('../images/hero-school.jpg');
+  background-image: url('../images/jowa-school-hero-students.png');
   background-size: cover;
   background-position: center 38%;
   padding: calc(52px + 76px) 48px 86px;
@@ -150,17 +150,17 @@
 .prog-card-visual-7habits {
   background:
     linear-gradient(160deg, rgba(10,68,90,.68) 0%, rgba(14,116,144,.36) 100%),
-    url('../images/program-7habits.jpg') center/cover no-repeat;
+    url('../images/jowa-school-prog-7habits-students.png') center/cover no-repeat;
 }
 .prog-card-visual-team {
   background:
     linear-gradient(160deg, rgba(6,70,80,.68) 0%, rgba(63,125,88,.38) 100%),
-    url('../images/program-team.jpg') center/cover no-repeat;
+    url('../images/jowa-school-prog-team-students.png') center/cover no-repeat;
 }
 .prog-card-visual-treasure {
   background:
     linear-gradient(160deg, rgba(10,55,75,.68) 0%, rgba(249,115,22,.30) 100%),
-    url('../images/program-treasure.jpg') center/cover no-repeat;
+    url('../images/jowa-school-prog-treasure-students.png') center/cover no-repeat;
 }
 .prog-card-visual-label {
   font-family: var(--font-disp);
