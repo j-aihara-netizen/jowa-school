@@ -8,11 +8,13 @@
   --teal:       #0E7490;   /* ブランドティール */
   --teal-dark:  #0A5568;   /* ダークティール（ヘッダー・濃背景） */
   --teal-bright:#06B6D4;   /* ブライトシアン（アクセント） */
+  --leaf:       #3F7D58;   /* 学校・自然感の補助色 */
+  --sun:        #FBBF24;   /* ハイライト */
   --coral:      #F97316;   /* CTAコーラルオレンジ */
   --coral-dark: #EA6C0A;   /* CTAホバー */
   --white:      #FFFFFF;
-  --ice:        #F0FDFA;   /* body背景（ティールがかった白） */
-  --ice-deep:   #CCFBF1;   /* セクション区切り用薄ティール */
+  --ice:        #F7FBF7;   /* body背景 */
+  --ice-deep:   #DDF4EA;   /* セクション区切り用薄グリーン */
   --ink:        #0C1A1F;   /* 本文テキスト */
   --sub:        #4A6670;   /* サブテキスト */
   --rule:       #B2DADE;   /* ボーダー */
@@ -21,8 +23,8 @@
   --font-body: 'Noto Sans JP', sans-serif;
 
   --radius-sm:  6px;
-  --radius-md:  12px;
-  --radius-lg:  20px;
+  --radius-md:  8px;
+  --radius-lg:  8px;
 }
 
 /* ── RESET & BASE ── */
@@ -42,7 +44,7 @@ ul { list-style: none; }
 /* ── HEADER ── */
 .hd {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  background: var(--teal-dark);
+  background: rgba(10,85,104,.96);
   height: 52px;
   display: flex; align-items: center; justify-content: space-between;
   padding: 0 32px;
@@ -80,22 +82,33 @@ ul { list-style: none; }
   color: rgba(255,255,255,.75);
 }
 .ft-cta {
-  background: var(--teal);
+  background:
+    linear-gradient(90deg, rgba(6,45,60,.90) 0%, rgba(6,45,60,.76) 48%, rgba(6,45,60,.46) 100%),
+    url('../images/cta-bg.jpg') center 54% / cover no-repeat;
   padding: 48px 48px;
+  position: relative;
 }
 .ft-cta-inner {
   max-width: 1120px; margin: 0 auto;
   display: flex; align-items: center; justify-content: space-between;
   gap: 32px; flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
 }
 .ft-cta-label {
   font-family: var(--font-disp);
   font-size: clamp(18px,2vw,24px);
   font-weight: 800; color: var(--white);
-  margin-bottom: 6px; letter-spacing: -.01em;
+  margin-bottom: 6px; letter-spacing: 0;
 }
 .ft-cta-sub {
   font-size: 14px; color: rgba(255,255,255,.72); line-height: 1.65;
+}
+.ft-cta-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
 }
 .ft-cta-btn {
   display: inline-block;
@@ -131,6 +144,12 @@ ul { list-style: none; }
   color: var(--white); margin-bottom: 4px;
 }
 .ft-logo b { color: var(--teal-bright); }
+.ft-logo span {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,.4);
+  letter-spacing: .1em;
+}
 .ft-tagline {
   font-size: 13px; color: rgba(255,255,255,.55);
   line-height: 1.7; margin-bottom: 12px;
@@ -167,7 +186,7 @@ ul { list-style: none; }
   font-family: var(--font-disp);
   font-size: clamp(24px,2.8vw,40px);
   font-weight: 800; color: var(--ink);
-  line-height: 1.2; letter-spacing: -.025em;
+  line-height: 1.2; letter-spacing: 0;
 }
 .sec-eyebrow {
   display: inline-block;
@@ -190,7 +209,7 @@ ul { list-style: none; }
 }
 .badge-teal { background: rgba(14,116,144,.1); color: var(--teal); }
 .badge-coral { background: var(--coral); color: var(--white); }
-.badge-ice { background: var(--ice-deep); color: var(--teal-dark); }
+.badge-ice { background: var(--ice-deep); color: var(--leaf); }
 
 /* ── BUTTON ── */
 .btn-primary {
@@ -210,6 +229,14 @@ ul { list-style: none; }
   transition: background .15s, color .15s;
 }
 .btn-outline:hover { background: var(--teal); color: var(--white); }
+.btn-outline-light {
+  color: rgba(255,255,255,.88);
+  border-color: rgba(255,255,255,.38);
+}
+.btn-outline-light:hover {
+  background: rgba(255,255,255,.12);
+  color: var(--white);
+}
 
 /* ── CONTENT WRAP ── */
 .content-wrap { max-width: 1120px; margin: 0 auto; padding: 0 48px; }
