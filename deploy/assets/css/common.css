@@ -67,6 +67,18 @@ ul { list-style: none; }
   transition: color .15s;
 }
 .hd-nav a:hover, .hd-nav a.active { color: var(--white); }
+.hd-sister {
+  font-size: 11px; font-weight: 700; letter-spacing: .04em;
+  color: rgba(255,255,255,.6) !important;
+  border: 1px solid rgba(255,255,255,.25);
+  padding: 5px 12px; border-radius: 100px;
+  transition: color .15s, border-color .15s !important;
+  white-space: nowrap;
+}
+.hd-sister:hover {
+  color: var(--white) !important;
+  border-color: rgba(255,255,255,.5) !important;
+}
 .hd-cta {
   background: var(--coral);
   color: var(--white) !important;
