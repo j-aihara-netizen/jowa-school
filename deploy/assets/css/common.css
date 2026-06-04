@@ -151,11 +151,13 @@ ul { list-style: none; }
   gap: 48px;
 }
 .ft-logo {
-  font-family: var(--font-disp);
-  font-size: 20px; font-weight: 800;
-  color: var(--white); margin-bottom: 4px;
+  display: flex; align-items: center; gap: 8px;
+  margin-bottom: 4px;
 }
-.ft-logo b { color: var(--teal-bright); }
+.ft-logo-img {
+  height: 28px; width: auto;
+  filter: brightness(0) invert(1); opacity: .85;
+}
 .ft-logo span {
   font-size: 13px;
   font-weight: 600;
