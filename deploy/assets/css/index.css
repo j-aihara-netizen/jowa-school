@@ -481,6 +481,16 @@
   border-left: 2px solid var(--rule);
 }
 .case-role { font-size: 12px; color: var(--sub); }
+.cases-photos {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 12px; margin-bottom: 36px; border-radius: var(--radius-md);
+  overflow: hidden;
+}
+.cases-photo {
+  height: 200px;
+  background-size: cover; background-position: center;
+  border-radius: var(--radius-sm);
+}
 .student-voices { text-align: center; }
 .voices-label {
   font-size: 12px; font-weight: 700; letter-spacing: .1em;
