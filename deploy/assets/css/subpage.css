@@ -32,6 +32,11 @@
     linear-gradient(135deg, rgba(10,55,75,.82) 0%, rgba(8,145,178,.65) 100%),
     url('../images/prog-treasure.jpg');
 }
+.pg-hero-ikiru {
+  background-image:
+    linear-gradient(135deg, rgba(5,60,50,.82) 0%, rgba(10,130,100,.65) 100%),
+    url('../images/adventure-allstandup.jpg');
+}
 .pg-hero-inner {
   max-width: 1120px; margin: 0 auto;
   position: relative; z-index: 1;
