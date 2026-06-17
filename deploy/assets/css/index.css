@@ -112,8 +112,36 @@
   text-align: center; margin-bottom: 52px;
 }
 .programs-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.programs-sub-grid {
   display: grid; grid-template-columns: repeat(3,1fr);
   gap: 24px;
+}
+/* フィーチャーカード（横長） */
+.prog-card-featured {
+  flex-direction: row;
+  min-height: 280px;
+}
+.prog-card-featured .prog-card-visual {
+  flex: 0 0 44%;
+  height: auto;
+  min-height: 260px;
+}
+.prog-card-featured .prog-card-visual-label {
+  font-size: clamp(28px, 3.5vw, 52px);
+}
+.prog-card-featured .prog-card-body {
+  padding: 36px 40px 40px;
+  justify-content: center;
+}
+.prog-card-featured .prog-card-title {
+  font-size: 22px;
+}
+.prog-card-featured .prog-card-desc {
+  font-size: 14px;
 }
 .prog-card {
   background: var(--white);
@@ -561,7 +589,10 @@
   .cases-stats { gap: 32px; padding: 24px; }
   .cases-grid { grid-template-columns: 1fr; }
   .facilities-grid { grid-template-columns: repeat(2, 1fr); }
-  .programs-grid { grid-template-columns: 1fr; }
+  .programs-sub-grid { grid-template-columns: 1fr; }
+  .prog-card-featured { flex-direction: column; }
+  .prog-card-featured .prog-card-visual { flex: none; height: 220px; min-height: unset; }
+  .prog-card-featured .prog-card-body { padding: 28px 28px 32px; }
   .features-grid { grid-template-columns: 1fr 1fr; }
   .scenes-grid { grid-template-columns: 1fr; }
   .flow-steps { flex-direction: column; gap: 24px; max-width: 400px; margin: 0 auto; }
