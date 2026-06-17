@@ -79,6 +79,19 @@ ul { list-style: none; }
   color: var(--white) !important;
   border-color: rgba(255,255,255,.5) !important;
 }
+.hd-dl {
+  font-size: 12px; font-weight: 700;
+  color: rgba(255,255,255,.85) !important;
+  border: 1px solid rgba(255,255,255,.4);
+  padding: 6px 14px; border-radius: 100px;
+  transition: color .15s, border-color .15s, background .15s !important;
+  white-space: nowrap;
+}
+.hd-dl:hover {
+  color: var(--white) !important;
+  border-color: rgba(255,255,255,.7) !important;
+  background: rgba(255,255,255,.08) !important;
+}
 .hd-cta {
   background: var(--coral);
   color: var(--white) !important;
@@ -260,10 +273,86 @@ ul { list-style: none; }
 }
 @media (max-width: 768px) {
   .hd { padding: 0 20px; }
-  .hd-nav a:not(.hd-cta) { display: none; }
+  .hd-nav a:not(.hd-cta):not(.hd-dl) { display: none; }
   .ft-cta { padding: 36px 24px; }
   .ft-main { padding: 36px 24px 24px; }
   .ft-main-inner { grid-template-columns: 1fr; gap: 28px; }
   .ft-bottom { padding: 16px 24px; }
   .content-wrap { padding: 0 24px; }
+}
+
+/* ── 資料ダウンロード モーダル ── */
+.wp-modal-overlay {
+  display: none;
+  position: fixed; inset: 0; z-index: 9000;
+  background: rgba(0,0,0,.55);
+  backdrop-filter: blur(4px);
+  align-items: center; justify-content: center;
+  padding: 24px;
+}
+.wp-modal-overlay.is-open {
+  display: flex;
+  animation: wpOverlayIn .2s ease;
+}
+@keyframes wpOverlayIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.wp-modal {
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 24px 64px rgba(0,0,0,.18);
+  width: 100%; max-width: 520px;
+  max-height: 92vh;
+  overflow-y: auto;
+  padding: 44px 40px 40px;
+  position: relative;
+  animation: wpModalIn .22s ease;
+}
+@keyframes wpModalIn {
+  from { opacity: 0; transform: scale(.96) translateY(8px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+.wp-modal-close {
+  position: absolute; top: 16px; right: 16px;
+  width: 32px; height: 32px;
+  background: #F0F9FF; border: none; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; font-size: 16px; color: var(--sub);
+  transition: background .15s, color .15s; line-height: 1;
+}
+.wp-modal-close:hover { background: var(--rule); color: var(--ink); }
+.wp-modal-eyebrow {
+  font-size: 11px; font-weight: 700; letter-spacing: .12em;
+  color: var(--teal); text-transform: uppercase; margin-bottom: 10px;
+}
+.wp-modal-title {
+  font-family: var(--font-disp);
+  font-size: 20px; font-weight: 800;
+  color: var(--ink); line-height: 1.4; margin-bottom: 16px;
+}
+.wp-modal-list {
+  list-style: none;
+  display: flex; flex-direction: column; gap: 7px;
+  margin-bottom: 24px; padding-bottom: 24px;
+  border-bottom: 1px solid var(--rule);
+}
+.wp-modal-list li {
+  display: flex; align-items: center; gap: 9px;
+  font-size: 13px; color: var(--sub); font-weight: 500;
+}
+.wp-modal-list li::before {
+  content: '';
+  display: block; width: 16px; height: 16px; min-width: 16px;
+  background: var(--teal) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='white'%3E%3Cpath fill-rule='evenodd' d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z' clip-rule='evenodd'/%3E%3C/svg%3E") center/10px no-repeat;
+  border-radius: 50%;
+}
+.wp-modal-note {
+  font-size: 11px; color: var(--sub); line-height: 1.7;
+  text-align: center; margin-top: 12px;
+}
+/* HubSpotフォームのモーダル内スタイル調整 */
+.wp-modal .hs-form-frame { width: 100%; display: block; }
+@media (max-width: 600px) {
+  .wp-modal { padding: 40px 24px 32px; }
 }

@@ -13,6 +13,7 @@
     <a href="/#scenes">活用シーン</a>
     <a href="/#flow">ご利用の流れ</a>
     <a href="https://jowa-fan.pages.dev" target="_blank" rel="noopener" class="hd-sister">企業向け研修 ↗</a>
+    <a href="/whitepaper" class="hd-dl">資料DL</a>
     <a href="/#contact" class="hd-cta">無料でお問い合わせ</a>
   </nav>
 </header>`;
