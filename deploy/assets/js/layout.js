@@ -36,7 +36,7 @@
       <div>
         <div class="ft-logo"><img src="/assets/images/jowa-logo.png" alt="JOWA" class="ft-logo-img"><span>SCHOOL</span></div>
         <p class="ft-tagline">旅の中に、本物の学びを。</p>
-        <p class="ft-meta">運営：株式会社JOWA<br>contact@jowa.fun</p>
+        <p class="ft-meta">運営：株式会社JOWA</p>
       </div>
       <div>
         <h4 class="ft-col-title">プログラム</h4>
@@ -67,10 +67,7 @@
   <div class="ft-bottom">
     <div class="ft-bottom-inner">
       <p class="ft-copy">© 2026 JOWA. All rights reserved.</p>
-      <nav class="ft-bottom-nav">
-        <a href="/privacy">プライバシーポリシー</a>
-        <a href="/terms">利用規約</a>
-      </nav>
+      <nav class="ft-bottom-nav"></nav>
     </div>
   </div>
 </footer>`;
