@@ -13,7 +13,7 @@
     <a href="/#scenes">活用シーン</a>
     <a href="/#flow">ご利用の流れ</a>
     <a href="https://jowa-fan.pages.dev" target="_blank" rel="noopener" class="hd-sister">企業向け研修 ↗</a>
-    <a href="/whitepaper" class="hd-dl">資料DL</a>
+    <a href="/whitepaper" class="hd-dl" style="display:none">資料DL</a>
     <a href="/#contact" class="hd-cta">無料でお問い合わせ</a>
   </nav>
 </header>`;
@@ -44,6 +44,7 @@
           <li><a href="/programs/7habits.html">7つの習慣®ワークショップ</a></li>
           <li><a href="/programs/team-building.html">チームビルディング120分の奇跡</a></li>
           <li><a href="/programs/treasure.html">トレジャーグランプリ</a></li>
+          <li><a href="/programs/ikiru.html">生きるチカラ</a></li>
         </ul>
       </div>
       <div>
