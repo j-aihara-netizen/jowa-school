@@ -122,7 +122,13 @@
   border-radius: 2px;
 }
 @media (max-width: 768px) {
-  .hd-menu-btn { display: flex; }
+  .hd-menu-btn {
+    display: flex;
+    margin-left: 8px;
+  }
+  .hd-nav {
+    margin-left: auto;
+  }
 }
 
 /* ── ドロワー オーバーレイ ── */
