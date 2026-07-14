@@ -12,7 +12,7 @@
     <a href="/#features">特徴</a>
     <a href="/#scenes">活用シーン</a>
     <a href="/#flow">ご利用の流れ</a>
-    <a href="https://jowa-fan.pages.dev" target="_blank" rel="noopener" class="hd-sister">企業向け研修 ↗</a>
+    <a href="https://jowa.fun" target="_blank" rel="noopener" class="hd-sister">企業向け研修 ↗</a>
     <a href="/whitepaper" class="hd-dl" style="display:none">資料DL</a>
     <a href="/#contact" class="hd-cta">無料でお問い合わせ</a>
   </nav>
@@ -59,7 +59,7 @@
       <div>
         <h4 class="ft-col-title">関連サービス</h4>
         <ul class="ft-col-links">
-          <li><a href="https://jowa-fan.pages.dev" target="_blank" rel="noopener">JOWA（企業向け研修）</a></li>
+          <li><a href="https://jowa.fun" target="_blank" rel="noopener">JOWA（企業向け研修）</a></li>
         </ul>
       </div>
     </div>
