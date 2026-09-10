@@ -2,6 +2,24 @@
  * JOWA SCHOOL — 共通ヘッダー・フッター注入
  * ヘッダー/フッターを変更する場合はこのファイルのみ編集してください。
  */
+
+/* ── Google Analytics（GA4）: 全ページ共通注入 ──
+ * 測定ID G-1N7N98ZCR3。個別HTMLへのベタ貼りはせず、このファイル1箇所で管理する。 */
+(function () {
+  var GA_ID = 'G-1N7N98ZCR3';
+  if (window.__ga4Loaded) return;
+  window.__ga4Loaded = true;
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+  document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  window.gtag = gtag;
+  gtag('js', new Date());
+  gtag('config', GA_ID);
+})();
+
 (function () {
   const isProgramPage = window.location.pathname.startsWith('/programs/');
 
@@ -44,10 +62,10 @@
       <div>
         <h4 class="ft-col-title">プログラム</h4>
         <ul class="ft-col-links">
-          <li><a href="/programs/7habits.html">7つの習慣®ワークショップ</a></li>
-          <li><a href="/programs/team-building.html">チームビルディング120分の奇跡</a></li>
-          <li><a href="/programs/treasure.html">トレジャーグランプリ</a></li>
-          <li><a href="/programs/ikiru.html">生きるチカラ</a></li>
+          <li><a href="/programs/7habits">7つの習慣®ワークショップ</a></li>
+          <li><a href="/programs/team-building">チームビルディング120分の奇跡</a></li>
+          <li><a href="/programs/treasure">トレジャーグランプリ</a></li>
+          <li><a href="/programs/ikiru">生きるチカラ</a></li>
         </ul>
       </div>
       <div>

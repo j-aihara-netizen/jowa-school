@@ -1,0 +1,84 @@
+# JOWA SCHOOL robots.txt
+# AEO方針「B案」: AIによる学習(training)は拒否 / AI検索・回答生成での引用に使うクローラーは許可
+# 最終更新: 2026-09-10  管理: JOWA案件チーム
+#
+# 【重要 / 前提】
+# このファイルを唯一の正とするには、Cloudflare Pages の「Managed robots.txt(AI botブロック)」を
+# 無効化しておく必要があります(ダッシュボード作業)。無効化前は Cloudflare が本文の先頭に
+# 独自のAI botブロックを prepend するため、下記 Google-Extended の許可が効きません。
+#
+# Content-Signal の意味:
+#   search=yes    検索インデックス(ハイパーリンク+短い抜粋)への利用は許可
+#   ai-train=no   AIモデルの学習・ファインチューニングへの利用は不許可(権利留保)
+#   use=reference 参照(引用)利用まで。全文の恒久取り込みは想定しない
+
+# ============================================================
+# 既定(全クローラー)
+# ============================================================
+User-agent: *
+Content-Signal: search=yes,ai-train=no,use=reference
+Allow: /
+Disallow: /404.html
+Disallow: /terms
+Disallow: /terms.html
+Disallow: /privacy
+Disallow: /privacy.html
+Disallow: /thanks-download
+Disallow: /thanks-download.html
+
+# ============================================================
+# AI検索・回答生成での引用に使うクローラー: 許可
+#   (いずれも「検索インデックス」または「ユーザー起点のフェッチ」用途。学習には使われない)
+# ============================================================
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+Allow: /
+Disallow: /404.html
+Disallow: /terms
+Disallow: /terms.html
+Disallow: /privacy
+Disallow: /privacy.html
+Disallow: /thanks-download
+Disallow: /thanks-download.html
+
+# OAI-SearchBot      : OpenAI ChatGPT検索のインデックス(引用元表示用)
+# ChatGPT-User       : ChatGPTでユーザーがリンクを開いた/読ませた時の即時フェッチ(人間起点)
+# Claude-SearchBot   : Anthropic Claude の検索インデックス
+# Claude-User        : Claude でユーザーの質問に答えるための即時フェッチ(人間起点。robots.txt遵守を明言)
+# PerplexityBot      : Perplexity の回答用インデックス
+# Perplexity-User    : Perplexity のユーザー起点リアルタイム取得
+# Google-Extended    : Gemini の grounding / 生成回答での引用に影響。
+#                      ※学習にも使われうるが、検索専用の別UAが無いため、
+#                        B案の主目的(AI検索露出)を優先して許可。通常の Googlebot は
+#                        元々許可のため AI Overviews / 通常検索には影響なし。
+
+# ============================================================
+# AI学習・データセット構築目的のクローラー: 拒否
+# ============================================================
+User-agent: GPTBot
+User-agent: ClaudeBot
+User-agent: CCBot
+User-agent: Bytespider
+User-agent: Amazonbot
+User-agent: meta-externalagent
+User-agent: Applebot-Extended
+User-agent: CloudflareBrowserRenderingCrawler
+Disallow: /
+
+# GPTBot                          : OpenAI のモデル学習クロール
+# ClaudeBot                       : Anthropic のモデル学習クロール
+# CCBot                           : Common Crawl(学習データセットの主要供給源)
+# Bytespider                      : ByteDance(TikTok)の学習クロール
+# Amazonbot                       : Amazon のクロール(学習利用の懸念。現状維持で拒否)
+# meta-externalagent              : Meta AI の学習クロール
+# Applebot-Extended               : Apple Intelligence の学習利用の opt-out シグナル。
+#                                   ※Siri/Spotlight/Apple検索での引用は通常の Applebot が担い、
+#                                     上の「*」で許可済みのため影響なし。
+# CloudflareBrowserRenderingCrawler: 現状維持で拒否
+
+Sitemap: https://school.jowa.fun/sitemap.xml
