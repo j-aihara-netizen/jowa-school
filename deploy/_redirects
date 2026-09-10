@@ -1,3 +1,6 @@
 /schooltrip  /  301
-/privacy     /privacy.html  200
-/terms       /terms.html    200
+
+# /privacy /terms は Cloudflare Pages のクリーンURLが privacy.html / terms.html を
+# そのまま配信するため rewrite ルール不要。
+# 旧: `/privacy /privacy.html 200` は .html→拡張子なしの自動308と衝突して
+#     無限リダイレクトになるため撤去（2026-09-10）。
