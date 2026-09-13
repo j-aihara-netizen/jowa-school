@@ -4,9 +4,10 @@
  */
 
 /* ── Google Analytics（GA4）: 全ページ共通注入 ──
- * 測定ID G-1N7N98ZCR3。個別HTMLへのベタ貼りはせず、このファイル1箇所で管理する。 */
+ * 測定ID G-1072QB3L19（社長管理の新規GA4プロパティ。2026-09-13差し替え）。
+ * 個別HTMLへのベタ貼りはせず、このファイル1箇所で管理する。 */
 (function () {
-  var GA_ID = 'G-1N7N98ZCR3';
+  var GA_ID = 'G-1072QB3L19';
   if (window.__ga4Loaded) return;
   window.__ga4Loaded = true;
   var s = document.createElement('script');
